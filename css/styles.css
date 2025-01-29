@@ -276,22 +276,32 @@ img {
 .modelo {
   background-color: var(--grisClaro);
   margin-bottom: 2rem;
-  padding-left: 4rem;
+  padding: 2rem;
   color: var(--primario);
   border-radius: 2rem;
   min-height: 20rem;
-  background-repeat: no-repeat;
-  background-position: 90% center;
-  background-size: 15rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition-property: transform background-size;
-  transition-duration: 300ms;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Importante para el control de la imagen */
+  overflow: hidden; /* Oculta cualquier exceso */
+  transition: transform 300ms, background-size 300ms;
+}
+.modelo img {
+  /* width: auto; */
+  height: 25rem; /* Tamaño ajustado de las imágenes */
+  flex-shrink: 0; /* Evita que la imagen se reduzca en tamaño */
+}
+.modelo h3 {
+  font-size: 2.4rem;
+  margin: 0;
 }
 .modelo:hover{
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1);
   background-size: 30rem
+}
+.modelo img:hover {
+  transform: rotate(6deg);
 }
 @media (min-width:992px) {
   .modelo{
@@ -308,21 +318,27 @@ img {
   font-weight: 900;
   line-height: 0;
 }
-
+.modelo .texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espaciado entre el nombre y el precio */
+}
 .modelo:first-of-type {
   margin-bottom: 0;
 }
 
 .modelo-x {
-  background-image: url(../img/modelo-x.svg);
+  /* background-image: url(../img/modelo-x.svg); */
+  color: var(--primario); /* No es necesario esto */
 }
 
 .modelo-y {
-  background-image: url(../img/modelo-y.svg);
+  /* background-image: url(../img/modelo-y.svg); */
+  color: var(--primario); /* No es necesario esto */
 }
 
 .modelo-z {
-  background-image: url(../img/modelo-z.svg);
+  /* background-image: url(../img/modelo-z.svg); */
   background-color: var(--primario);
   color: var(--blanco);
 }
